@@ -1,9 +1,11 @@
 import defaultState from '../defaultState';
 import io from '../../utils/io';
 
-io.key = 'react-redux-immutable-demo-store';
+const tag = 'v0.0.1';
 
-export const loaclLoad = () => {
+io.key = `immutableDemo_${tag}`;
+
+export const localLoad = () => {
   const data = io.load();
   return {
     type: 'load localState',
@@ -15,11 +17,13 @@ export const loaclLoad = () => {
     },
   }
 };
-export const loaclSave = () => {
+export const localSave = () => {
   return {
     type: 'save loaclState',
     fix: (state) => {
-      io.saveAction(defaultState, state)
+      io.save({
+        ...defaultState, ...state,
+      })
     },
   }
 };

@@ -10,17 +10,21 @@ import Home from './routers/Home';
 import User from './routers/User';
 import { connect } from 'react-redux';
 import defaultState from './models/defaultState'
+import * as safe from './utils/safe';
+
 import {
-  loaclLoad,
-  changeSelectedNowStore,
-  changeSelectedNextStore,
+  localSave,
+  localLoad,
+  asyncChangeSelectedNowStore,
+  asyncChangeSelectedNextStore,
 } from './models/actions'
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.props.loadLoaclState();
+    this.props.loaclLoad();
   }
+
   componentDidMount() {
     // if begin use other URL page, to be use hashChange()
     hashChange()
@@ -40,14 +44,20 @@ class App extends Component {
               } else {
                 history.push('/User/');
               }
+              this.props.changeSelectedNowStore(5, 20);
             }}
           >
             redux+immer 例子
+            {JSON.stringify(safe.get('selectedStore.name')(this.props))}
           </div>
           <Switch>
             <Route exact path="/Home/*" component={Home}/>
             <Route exact path="/User/*" component={User}/>
           </Switch>
+          <div onClick={() => {
+            this.props.localSave();
+          }}>save
+          </div>
         </div>
       </RootRouter>
     );
@@ -62,12 +72,17 @@ function mapProps(state = defaultState) {
 
 function mapDispatch(dispatch) {
   return {
-    loadLoaclState: () => {
-      dispatch(loaclLoad());
+    localSave: () => {
+      dispatch(localSave());
+    },
+    loaclLoad: () => {
+      dispatch(localLoad());
     },
     changeSelectedNowStore: async (storeIdA, storeIdB) => {
-      dispatch(await changeSelectedNowStore(storeIdA));
-      dispatch(await changeSelectedNextStore(storeIdB));
+      const a = await asyncChangeSelectedNowStore(storeIdA)
+      dispatch(a);
+      const b = await asyncChangeSelectedNextStore(storeIdB)
+      dispatch(b);
     },
   }
 }

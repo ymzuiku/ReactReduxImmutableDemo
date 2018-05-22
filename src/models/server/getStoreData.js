@@ -15,13 +15,15 @@ const testFetch = (arr) => {
 };
 
 export async function fetchStoreDetail(storeId) {
-  return await testFetch({
-    theStoreId: storeId,
-    otherData: {
-      subName: undefined,
-      subAge: undefined,
+  return await testFetch([
+    {
+      theStoreId: storeId,
+      otherData: {
+        subName: undefined,
+        subAge: undefined,
+      },
+      name: '模拟数据请求',
+      money: 500,
     },
-    name: '模拟数据请求',
-    money: 500,
-  });
+  ]);
 }
