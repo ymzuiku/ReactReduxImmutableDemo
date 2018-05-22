@@ -2,12 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/immutable@^3.8.7":
-  version "3.8.7"
-  resolved "https://registry.yarnpkg.com/@types/immutable/-/immutable-3.8.7.tgz#536d33d30f3f3d9a6d4642a219419fd82af633fb"
-  dependencies:
-    immutable "*"
-
 "@types/react-redux@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.0.tgz#31711592b13ed6d6d2fd4506e5447b00e1f0b484"
@@ -1329,12 +1323,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000844"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000844.tgz#bca5798cda2b6931d68100c2d69e55fb338cbb41"
+  version "1.0.30000845"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000845.tgz#296a9064a849b76cf6d7be132c1852c5b55f3718"
 
 caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792:
-  version "1.0.30000844"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000844.tgz#de7c84cde0582143cf4f5abdf1b98e5a0539ad4a"
+  version "1.0.30000845"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000845.tgz#2df2d8d73c67476b5f8d05ca5771f87365581c5b"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3245,8 +3239,8 @@ http-errors@~1.6.2:
     statuses ">= 1.4.0 < 2"
 
 http-parser-js@>=0.4.0:
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/http-parser-js/-/http-parser-js-0.4.12.tgz#b9cfbf4a2cf26f0fc34b10ca1489a27771e3474f"
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/http-parser-js/-/http-parser-js-0.4.13.tgz#3bd6d6fde6e3172c9334c3b33b6c193d80fe1137"
 
 http-proxy-middleware@~0.17.4:
   version "0.17.4"
@@ -3311,9 +3305,9 @@ ignore@^3.3.3:
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.8.tgz#3f8e9c35d38708a3a7e0e9abb6c73e7ee7707b2b"
 
-immutable@*, immutable@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+immer@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-1.3.0.tgz#b5c462dad2a129ad909eb4a180de63ffaa348d12"
 
 import-lazy@^2.1.0:
   version "2.1.0"
@@ -5470,8 +5464,8 @@ punycode@^1.2.4, punycode@^1.4.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
 punycode@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
 q@^1.1.2:
   version "1.5.1"
@@ -5608,9 +5602,9 @@ react-redux@^5.0.7:
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
 
-"react-router-hash-history@git+https://github.com/ymzuiku/react-router-hash-history":
+"react-router-hash-history@git+https://github.com/ymzuiku/react-router-hash-history.git":
   version "0.1.6"
-  resolved "git+https://github.com/ymzuiku/react-router-hash-history#4c0022e0349521178beee98dd9460eee66c7eaab"
+  resolved "git+https://github.com/ymzuiku/react-router-hash-history.git#bbdc2f2eb7dd33ff31ad0bde2515c7b8141be388"
   dependencies:
     history "^4.7.2"
     react "^16.3.2"

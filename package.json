@@ -1,22 +1,19 @@
 {
-  "name": "demo",
+  "name": "newa",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/immutable": "^3.8.7",
     "@types/react-redux": "^6.0.0",
-    "immutable": "^3.8.2",
-    "lodash": "^4.17.10",
+    "immer": "^1.3.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.7",
-    "react-router-hash-history": "git+https://github.com/ymzuiku/react-router-hash-history",
     "react-scripts": "1.1.4",
+    "react-router-hash-history":"git+https://github.com/ymzuiku/react-router-hash-history.git",
     "redux": "^4.0.0"
   },
   "scripts": {
-    "up": "yarn upgrade react-router-hash-history",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
