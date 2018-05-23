@@ -10,7 +10,7 @@ import Home from './routers/Home';
 import User from './routers/User';
 import { connect } from 'react-redux';
 import defaultState from './models/defaultState'
-import * as safe from './utils/safe';
+import fp from 'lodash/fp';
 
 import {
   localSave,
@@ -48,7 +48,7 @@ class App extends Component {
             }}
           >
             redux+immer 例子
-            {JSON.stringify(safe.get('selectedStore.name')(this.props))}
+            {JSON.stringify(fp.get(this.props, 'selectedStore.name', 10))}
           </div>
           <Switch>
             <Route exact path="/Home/*" component={Home}/>
