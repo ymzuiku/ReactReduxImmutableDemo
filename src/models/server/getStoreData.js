@@ -19,7 +19,7 @@ export async function fetchStoreDetail(storeId) {
     {
       theStoreId: storeId,
       otherData: {
-        subName: undefined,
+        subName: 'bbb'+storeId,
         subAge: undefined,
       },
       name: '模拟数据请求',

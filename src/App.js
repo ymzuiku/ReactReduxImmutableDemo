@@ -9,9 +9,6 @@ import {
 import Home from './routers/Home';
 import User from './routers/User';
 import { connect } from 'react-redux';
-import defaultState from './models/defaultState'
-import fp from 'lodash/fp';
-
 import {
   localSave,
   localLoad,
@@ -48,11 +45,11 @@ class App extends Component {
             }}
           >
             redux+immer 例子
-            {JSON.stringify(fp.get(this.props, 'selectedStore.name', 10))}
+            {JSON.stringify(this.props.name)}
           </div>
           <Switch>
-            <Route exact path="/Home/*" component={Home}/>
-            <Route exact path="/User/*" component={User}/>
+            <Route exact path="/Home/*" component={Home} />
+            <Route exact path="/User/*" component={User} />
           </Switch>
           <div onClick={() => {
             this.props.localSave();
@@ -64,9 +61,10 @@ class App extends Component {
   }
 }
 
-function mapProps(state = defaultState) {
+function mapProps(state = Map()) {
+  console.log(state);
   return {
-    selectedStore: state.selectedStore,
+    name: state.getIn(['selectedStore', 'otherData', 'subName']),
   }
 }
 

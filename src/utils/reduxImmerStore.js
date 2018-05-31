@@ -1,17 +1,19 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import produce from 'immer';
+import { Map } from 'immutable';
 
-// magic 使用 immer 处理数据
-const reducer = (state, action) => {
+// eslint-disable-next-line
+let initialState = Map({});
+
+// magic 使用 immutable 处理数据
+const reducer = (state = initialState, action) => {
   if (action.fix) {
     const data = action.fix(state);
-    if (data) {
+    if (data !== undefined) {
       return data;
     }
-  } else if (action.recipe) {
-    return produce(state, action.recipe);
+    return state;
   }
   return state;
 }

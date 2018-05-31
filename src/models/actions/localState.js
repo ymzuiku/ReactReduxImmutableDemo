@@ -1,5 +1,6 @@
 import defaultState from '../defaultState';
 import io from '../../utils/io';
+import { Map } from 'immutable';
 
 const tag = 'v0.0.1';
 
@@ -10,20 +11,18 @@ export const localLoad = () => {
   return {
     type: 'load localState',
     fix: (state) => {
-      return {
+      return Map({
         ...defaultState,
-        ...state,
-      }
+        ...data,
+      })
     },
   }
 };
 export const localSave = () => {
   return {
     type: 'save loaclState',
-    fix: (state) => {
-      io.save({
-        ...defaultState, ...state,
-      })
+    fix: (state = Map()) => {
+      io.save(state.toJSON());
     },
   }
 };
